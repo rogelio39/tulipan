@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón Palpitante y Tulipán</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f0e3;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Corazón Palpitante */
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: heartbeat 1s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1) rotate(-45deg);
+            }
+
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
+
+        /* Tulipán estilizado */
+        .tulip {
+            margin-top: 40px;
+            position: relative;
+            width: 40px;
+        }
+
+        .tulip .stem {
+            width: 4px;
+            height: 100px;
+            background-color: green;
+            margin: 0 auto;
+            position: relative;
+            z-index: -1;
+        }
+
+        .tulip .petal {
+            width: 40px;
+            height: 40px;
+            background-color: #ff4d94;
+            border-radius: 50%;
+            position: absolute;
+            top: -30px;
+        }
+
+        .tulip .petal.left {
+            transform: rotate(-20deg);
+            left: -20px;
+        }
+
+        .tulip .petal.right {
+            transform: rotate(20deg);
+            right: -20px;
+        }
+
+        .tulip .center {
+            width: 30px;
+            height: 50px;
+            background-color: #ff6699;
+            position: absolute;
+            top: -30px;
+            left: 5px;
+            border-radius: 50% 50% 0 0;
+            z-index: 1;
+        }
+
+        /* Mensaje */
+        .message {
+            margin-top: 40px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="heart"></div>
+
+    <div class="tulip">
+        <div class="stem"></div>
+        <div class="petal left"></div>
+        <div class="petal right"></div>
+        <div class="center"></div>
+    </div>
+
+    <div class="message">
+        Eres lo mejor de mi vida <span class="highlight">Lourdes Peralta</span>
+    </div>
+
+</body>
+
+</html>
